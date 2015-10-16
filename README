@@ -1,0 +1,14 @@
+Dir2Dac
+
+Take a directory full of sql scripts, add in some references and db options and create a dacpac from it.
+
+Still a work in progress but basically works.
+
+To add a reference to a dacpac there is no way to do it using the api so the way I do it is:
+
+	- Create a new TSqlModel with nothing in it
+	- Save that to a .dacpac
+	- Manually edit the dacpac to include the references (using the packaging api)
+	- Re-open the model and add in all the script objects
+
+This is a bit of a faff about but *seems* to work...
